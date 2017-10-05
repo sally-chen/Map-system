@@ -30,12 +30,12 @@
 
 #
 # By default the following custom flags are enabled:
+#    * pkg-config is used to set all compile and linking flags required by EasyGL (x11, xft, fontconfig, cairo)
 #    * -fopenmp (OpenMP for parallel programming)
 #    * -lreadline (interactive line editing library)
-#    * -lX11, -lXft, -lfontconfig (libraries used by EasyGL)
 #
-CUSTOM_COMPILE_FLAGS = -fopenmp
-CUSTOM_LINK_FLAGS    = -fopenmp -lreadline -lX11 -lXft -lfontconfig
+CUSTOM_COMPILE_FLAGS = $(shell pkg-config --cflags x11 xft fontconfig cairo) -fopenmp 
+CUSTOM_LINK_FLAGS    = $(shell pkg-config --libs x11 xft fontconfig cairo) -fopenmp -lreadline 
 
 ################################################################################
 #	                ! WARNING - Here Be Dragons - WARNING !
@@ -45,6 +45,24 @@ CUSTOM_LINK_FLAGS    = -fopenmp -lreadline -lX11 -lXft -lfontconfig
 #
 #                    Make sure you know what you are doing!
 ################################################################################
+
+################################################################################
+# Utility Functions
+################################################################################
+
+#Recursive version of wildcard (i.e. it checks all subdirectories)
+# For example:
+# 	$(call rwildcard, /tmp/, *.c *.h)
+# will return all files ending in .c or .h in /tmp and any of tmp's sub-directories
+#NOTE: the directory (e.g. /tmp/) should end with a slash (i.e. /)
+rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
+
+#Recursively find directories containing specifc files (useful for finding header include directories)
+# For example:
+# 	$(call rfiledirs, /tmp/, *.h *.hpp)
+# will return all directories in /tmp which contain .h or .hpp files
+#NOTE: the directory (e.g. /tmp/) should end with a slash (i.e. /)
+rfiledirs=$(sort $(dir $(call rwildcard, $1, $2)))
 
 ################################################################################
 # Configuration
@@ -131,7 +149,7 @@ BOOST_SERIALIZATION_LIB := $(BOOST_SERIALIZATION_DEBUG_CHECK_LIB)
 endif
 
 #Streets database
-ifneq (, $(wildcard $(STREETS_DATABASE_DEBUG_CHECKLIB))) 
+ifneq (, $(wildcard $(STREETS_DATABASE_DEBUG_CHECK_LIB))) 
 	#Debug lib file exists, use it
 STREETS_DATABASE_LIB := $(STREETS_DATABASE_DEBUG_CHECK_LIB)
 endif
@@ -143,12 +161,6 @@ UNITTESTPP_LIB := $(UNITTESTPP_DEBUG_CHECK_LIB)
 endif
 
 endif #debug
-
-#
-# EasyGL Configuration
-#
-GRAPHICS_CFLAGS = $(shell pkg-config --cflags freetype2) # evaluates to the correct include flags for the freetype headers
-
 
 ################################################################################
 # Tool flags
@@ -164,7 +176,6 @@ WARN_CFLAGS = -Wall \
 			 -Wlogical-op \
 			 -Wmissing-declarations \
 			 -Wmissing-include-dirs \
-			 -Wredundant-decls \
 			 -Wswitch-default \
 			 -Wundef \
 			 -Wunused-variable \
@@ -173,6 +184,7 @@ WARN_CFLAGS = -Wall \
 			 -Wnon-virtual-dtor \
 			 -Wold-style-cast \
 			 -Wshadow \
+			 -Wredundant-decls \
 			 #-Wconversion \
 			 #-Wno-sign-conversion
 
@@ -183,7 +195,7 @@ STREETS_DATABASE_INCLUDE_FLAGS = $(foreach dir, $(STREETS_DATABASE_INCLUDE_DIRS)
 ECE297_MILESTONE_INCLUDE_FLAGS = $(foreach dir, $(ECE297_MILESTONE_INCLUDE_DIRS), -I$(dir))
 
 #What include flags should be passed to the compiler?
-INCLUDE_CFLAGS = $(LIB_STREETMAP_INCLUDE_FLAGS) $(ECE297_MILESTONE_INCLUDE_FLAGS) $(STREETS_DATABASE_INCLUDE_FLAGS) $(EXE_INCLUDE_FLAGS) $(GRAPHICS_CFLAGS)
+INCLUDE_CFLAGS = $(LIB_STREETMAP_INCLUDE_FLAGS) $(ECE297_MILESTONE_INCLUDE_FLAGS) $(STREETS_DATABASE_INCLUDE_FLAGS) $(EXE_INCLUDE_FLAGS)
 
 #What options to generate header dependency files should be passed to the compiler?
 DEP_CFLAGS = -MMD -MP
@@ -204,7 +216,7 @@ RELEASE_LFLAGS =
 #What extra flags to use in release profile build?
 # Note: provide -g so symbols are included in profiling info
 PROFILE_CFLAGS = -g -O3 -pg -fno-inline
-PROFILE_LFLAGS =
+PROFILE_LFLAGS = -pg
 
 #Pick either debug/release/profile build flags 
 ifeq (release, $(CONF))
@@ -237,24 +249,6 @@ LFLAGS = $(CONF_LFLAGS) -L. $(STREETS_DATABASE_LIB) $(BOOST_SERIALIZATION_LIB) $
 ARFLAGS = rvs
 
 ################################################################################
-# Utility Functions
-################################################################################
-
-#Recursive version of wildcard (i.e. it checks all subdirectories)
-# For example:
-# 	$(call rwildcard, /tmp/, *.c *.h)
-# will return all files ending in .c or .h in /tmp and any of tmp's sub-directories
-#NOTE: the directory (e.g. /tmp/) should end with a slash (i.e. /)
-rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))
-
-#Recursively find directories containing specifc files (useful for finding header include directories)
-# For example:
-# 	$(call rfiledirs, /tmp/, *.h *.hpp)
-# will return all directories in /tmp which contain .h or .hpp files
-#NOTE: the directory (e.g. /tmp/) should end with a slash (i.e. /)
-rfiledirs=$(sort $(dir $(call rwildcard, $1, $2)))
-
-################################################################################
 # Generate object file names from source file names
 ################################################################################
 
@@ -265,7 +259,10 @@ EXE_OBJ=$(patsubst %.cpp, $(BUILD_DIR)/$(CONF)/%.o, $(call rwildcard, $(EXE_SRC_
 LIB_STREETMAP_OBJ=$(patsubst %.cpp, $(BUILD_DIR)/$(CONF)/%.o, $(call rwildcard, $(LIB_STREETMAP_SRC_DIR), *.cpp))
 
 #Objects associated with tests for the street map library
-LIB_STREETMAP_TEST_OBJ=$(patsubst %.cpp, $(BUILD_DIR)/$(CONF)/%.o, $(call rwildcard, $(LIB_STREETMAP_TEST_DIR), *.cpp))
+# We collect tests both from the local project (under LIB_STREETMAP_TEST_DIR)
+LIB_STREETMAP_TEST_OBJ=$(patsubst %.cpp, $(BUILD_DIR)/$(CONF)/%.o, \
+					   	$(call rwildcard, $(LIB_STREETMAP_TEST_DIR), *.cpp) \
+					   )
 
 ################################################################################
 # Dependency files

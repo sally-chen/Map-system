@@ -4,10 +4,48 @@
     <df root="." name="0">
       <df name="libstreetmap">
         <df name="src">
+          <df name="easygl">
+            <in>Surface.cpp</in>
+            <in>example.cpp</in>
+            <in>fontcache.cpp</in>
+            <in>graphics.cpp</in>
+            <in>graphics_state.cpp</in>
+            <in>graphics_types.cpp</in>
+          </df>
+          <in>Global.cpp</in>
+          <in>Node.cpp</in>
+          <in>Rtree.cpp</in>
+          <in>backups.cpp</in>
           <in>m1.cpp</in>
+          <in>m2.cpp</in>
+          <in>m3.cpp</in>
+          <in>m3test.cpp</in>
+          <in>m4.cpp</in>
         </df>
         <df name="tests">
+          <in>courier_verify.cpp</in>
+          <in>m3_func_public.inter_inter_legality.london_england.cpp</in>
+          <in>m3_func_public.inter_poi_legality.london_england.cpp</in>
+          <in>m3_func_public.inter_poi_legality.toronto_canada.cpp</in>
+          <in>m3_perf_public.inter_inter_perf_hard.london_england.cpp</in>
+          <in>m3_perf_public.inter_inter_perf_hard.toronto_canada.cpp</in>
+          <in>m3_perf_public.inter_inter_perf_medium.london_england.cpp</in>
+          <in>m3_perf_public.inter_inter_perf_medium.toronto_canada.cpp</in>
+          <in>m3_perf_public.inter_poi_perf_basic.london_england.cpp</in>
+          <in>m3_perf_public.inter_poi_perf_basic.toronto_canada.cpp</in>
+          <in>m3_perf_public.inter_poi_perf_hard.london_england.cpp</in>
+          <in>m3_perf_public.inter_poi_perf_hard.toronto_canada.cpp</in>
+          <in>m3_perf_public.inter_poi_perf_medium.london_england.cpp</in>
+          <in>m3_perf_public.inter_poi_perf_medium.toronto_canada.cpp</in>
+          <in>m3_perf_public.inter_poi_perf_very_hard.london_england.cpp</in>
+          <in>m3_perf_public.inter_poi_perf_very_hard.toronto_canada.cpp</in>
+          <in>m4_func_public.extreme_toronto_canada.cpp</in>
+          <in>m4_func_public.path_cost_new_york_usa.cpp</in>
+          <in>m4_func_public.simple_legality_toronto_canada.cpp</in>
+          <in>path_verify.cpp</in>
+          <in>tester_backup_1.cpp</in>
           <in>tester_main.cpp</in>
+          <in>tester_street_ids.cpp</in>
         </df>
       </df>
       <df name="main">
@@ -22,6 +60,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>nbproject/private/test.html</itemPath>
   </logicalFolder>
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
   <sourceRootList>
@@ -47,12 +86,6 @@
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>mapper</executablePath>
           <ccTool flags="-O3 -std=c++11 -fopenmp">
-            <incDir>
-              <pElem>/cad2/ece297s/public/include/milestones</pElem>
-              <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
-              <pElem>/usr/include/freetype2</pElem>
-              <pElem>.</pElem>
-            </incDir>
           </ccTool>
         </makeTool>
         <preBuild>
@@ -60,9 +93,240 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
-      <item path="libstreetmap/src/m1.cpp" ex="false" tool="1" flavor2="8">
+      <folder path="0/libstreetmap/src">
+        <ccTool>
+          <incDir>
+            <pElem>libstreetmap/src</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/libstreetmap/src/easygl">
+        <ccTool>
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/libstreetmap/tests">
+        <ccTool>
+          <incDir>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/main">
+        <ccTool>
+          <incDir>
+            <pElem>libstreetmap/src</pElem>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="libstreetmap/src/Global.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/Node.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/Rtree.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/backups.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/Surface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/example.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/fontcache.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics_state.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m1.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m2.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m3.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m3test.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m4.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/tester_street_ids.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
       </item>
       <item path="main/src/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -86,14 +350,6 @@
           <buildCommand>${MAKE} -f Makefile CONF=debug</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>mapper</executablePath>
-          <ccTool>
-            <incDir>
-              <pElem>/cad2/ece297s/public/include/milestones</pElem>
-              <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
-              <pElem>/usr/include/freetype2</pElem>
-              <pElem>.</pElem>
-            </incDir>
-          </ccTool>
         </makeTool>
         <preBuild>
           <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
@@ -107,9 +363,121 @@
           </preprocessorList>
         </ccTool>
       </folder>
+      <folder path="0/libstreetmap/src">
+        <ccTool>
+          <incDir>
+            <pElem>libstreetmap/src</pElem>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/libstreetmap/tests">
+        <ccTool>
+          <incDir>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/main">
+        <ccTool>
+          <incDir>
+            <pElem>libstreetmap/src</pElem>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="libstreetmap/src/Global.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/Node.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/backups.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/Surface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/fontcache.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics_state.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
       <item path="libstreetmap/src/m1.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="libstreetmap/src/m2.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m3.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m3test.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m4.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/tester_street_ids.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
       </item>
       <item path="main/src/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -150,13 +518,26 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="libstreetmap/src/backups.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="libstreetmap/src/m1.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="libstreetmap/src/m2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libstreetmap/src/m4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libstreetmap/tests/tester_street_ids.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="main/src/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="nbproject/private/test.html" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="UnitTest_Release" type="0">
@@ -177,28 +558,29 @@
           <buildCommand>${MAKE} -f Makefile test_libstreetmap CONF=release</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>test_libstreetmap</executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>libstreetmap/src</pElem>
+            </incDir>
+          </ccTool>
         </makeTool>
         <preBuild>
           <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
-      <folder path="0/libstreetmap/src">
+      <folder path="0/libstreetmap/src/easygl">
         <ccTool>
           <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
             <pElem>/cad2/ece297s/public/include/milestones</pElem>
             <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
             <pElem>/usr/include/freetype2</pElem>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-      </folder>
-      <folder path="0/libstreetmap/tests">
-        <ccTool>
-          <incDir>
-            <pElem>/cad2/ece297s/public/include/milestones</pElem>
-            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
-            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
             <pElem>.</pElem>
           </incDir>
         </ccTool>
@@ -206,7 +588,6 @@
       <folder path="0/main">
         <ccTool>
           <incDir>
-            <pElem>libstreetmap/src</pElem>
             <pElem>libstreetsdatabase/src</pElem>
             <pElem>main/src</pElem>
             <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
@@ -216,12 +597,602 @@
           </incDir>
         </ccTool>
       </folder>
+      <item path="libstreetmap/src/Global.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/Node.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/Rtree.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/backups.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/Surface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/fontcache.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics_state.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+        </ccTool>
+      </item>
       <item path="libstreetmap/src/m1.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m2.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m3.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m3test.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m4.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/courier_verify.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_func_public.inter_inter_legality.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_func_public.inter_poi_legality.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_func_public.inter_poi_legality.toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_inter_perf_hard.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_inter_perf_hard.toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_inter_perf_medium.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_inter_perf_medium.toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_basic.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_basic.toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_hard.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_hard.toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_medium.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_medium.toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_very_hard.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_very_hard.toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m4_func_public.extreme_toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m4_func_public.path_cost_new_york_usa.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m4_func_public.simple_legality_toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/path_verify.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/tester_backup_1.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="libstreetmap/tests/tester_main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/tester_street_ids.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="1">
+          <incDir>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>.</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="main/src/main.cpp" ex="false" tool="1" flavor2="8">
@@ -246,29 +1217,67 @@
           <buildCommand>${MAKE} -f Makefile test_libstreetmap CONF=debug</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>test_libstreetmap</executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>libstreetmap/src</pElem>
+            </incDir>
+          </ccTool>
         </makeTool>
         <preBuild>
           <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
-      <folder path="0/libstreetmap/src">
+      <folder path="0/libstreetmap/src/easygl">
         <ccTool>
           <incDir>
-            <pElem>libstreetmap/src</pElem>
-            <pElem>libstreetmap/src/m4_optimizers/annealer</pElem>
-            <pElem>libstreetmap/src/optimizer</pElem>
-            <pElem>libstreetmap/src/optimizer/util</pElem>
-            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>libstreetmap/src/easygl</pElem>
             <pElem>/cad2/ece297s/public/include/milestones</pElem>
-            <pElem>main/src</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
             <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
             <pElem>.</pElem>
           </incDir>
         </ccTool>
       </folder>
-      <folder path="0/libstreetmap/tests">
-        <ccTool>
+      <item path="libstreetmap/src/Global.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/Node.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/Rtree.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
           <incDir>
             <pElem>/cad2/ece297s/public/include/milestones</pElem>
             <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
@@ -276,13 +1285,276 @@
             <pElem>.</pElem>
           </incDir>
         </ccTool>
-      </folder>
+      </item>
+      <item path="libstreetmap/src/backups.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/Surface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/fontcache.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics_state.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/easygl/graphics_types.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
       <item path="libstreetmap/src/m1.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m2.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m3.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m3test.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/src/m4.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/courier_verify.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_basic.toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m3_perf_public.inter_poi_perf_very_hard.london_england.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/m4_func_public.simple_legality_toronto_canada.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/path_verify.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/tester_backup_1.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="libstreetmap/tests/tester_main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
+          <incDir>
+            <pElem>libstreetmap/src/easygl</pElem>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/cairo</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/include/pixman-1</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>/usr/include/libpng12</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="libstreetmap/tests/tester_street_ids.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/cad2/ece297s/public/include/milestones</pElem>
+            <pElem>/cad2/ece297s/public/include/streetsdatabase</pElem>
+            <pElem>/usr/include/freetype2</pElem>
+            <pElem>.</pElem>
+          </incDir>
         </ccTool>
       </item>
     </conf>
@@ -338,13 +1610,26 @@
           </incDir>
         </ccTool>
       </folder>
+      <item path="libstreetmap/src/backups.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="libstreetmap/src/m1.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="libstreetmap/src/m2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libstreetmap/src/m4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="libstreetmap/tests/tester_main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
         </ccTool>
+      </item>
+      <item path="libstreetmap/tests/tester_street_ids.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="nbproject/private/test.html" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Profile" type="0">
@@ -378,13 +1663,26 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="libstreetmap/src/backups.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="libstreetmap/src/m1.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
       </item>
+      <item path="libstreetmap/src/m2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libstreetmap/src/m4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libstreetmap/tests/tester_street_ids.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="main/src/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="nbproject/private/test.html" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
