@@ -4,3 +4,4 @@
 ###### Implemented A*, R-tree etc. algorithms for path finding and greedy algorithm and multithreading for Travelling salesman problem
 
 ### Demo -  Path-finding, indicating start and end end point and direction for getting there
+![alt text](https://github.com/sally-chen/Map-system/blob/master/screenshot.JPG)
